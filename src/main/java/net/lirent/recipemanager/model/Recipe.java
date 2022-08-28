@@ -5,7 +5,6 @@ import net.lirent.recipemanager.utility.Category;
 
 import javax.persistence.*;
 import java.sql.Timestamp;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
@@ -39,12 +38,12 @@ public class Recipe {
     @OneToMany(cascade = CascadeType.ALL)
     @JoinColumn(name = "recipe_id")
     //@JsonManagedReference
-    private List<Ingredient> ingredients = new ArrayList<>();
+    private List<Ingredient> ingredients;
 
     @OneToMany(cascade = CascadeType.ALL)
     @JoinColumn(name = "recipe_id")
     //@JsonManagedReference(value="instructions")
-    private List<Instruction> instructions = new ArrayList<>();
+    private List<Instruction> instructions;
 
     @Column(name = "TS_VERSION", columnDefinition="TIMESTAMP(6)")
     @Version
