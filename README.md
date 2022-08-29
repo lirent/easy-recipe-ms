@@ -10,7 +10,12 @@ This is a RESTful standalone Java application for managing recipes.
 To build this application my framework of choice is Spring Boot.
 
 ## Demo Available
-Check out the [Recipe-Manager App Demo]() available on Heroku.
+Check out the [Recipe-Manager App Demo](https://recipe-manager0.herokuapp.com/) available on Heroku.
+
+The exposed endpoint is `HOST:8080/api/v1/recipes`
+```shell
+https://recipe-manager0.herokuapp.com/
+```
 
 ## Requirements
 
