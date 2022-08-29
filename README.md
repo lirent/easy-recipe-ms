@@ -2,12 +2,19 @@
 
 This is a RESTful standalone Java application for managing recipes.
 
-* Manages the favourite recipes and able to filter based on one or more criteria.
-* Production ready and Docker build
+* Add and manage the favourite recipes and able to filter based on one or more criteria.
+* API's for get, post, update and delete recipes available
+* Production ready and in memory database for local development
+* Docker build with MySLQ database
 * Provides interface to customize the `SearchEngine`
 * Flexible and extendable Interfaces
 
-To build this application my framework of choice is Spring Boot.
+### Why Spring Boot?
+To build this application my framework of choice is Spring Boot and Maven as project manager.
+Spring Boot provides embedded container support and eliminates the boilerplate configurations. Provision to run the jars independently using the command java -jar.
+
+Along with creating entity classes and extending inbuilt JpaRepository interfaces is made use of Hibernate.
+Swagger-ui offer the documentation API's which is configured in the app. 
 
 ## Demo Available
 Check out the [Recipe-Manager App Demo](https://recipe-manager0.herokuapp.com/) available on Heroku.
@@ -34,6 +41,15 @@ Alternatively you can use the [Spring Boot Maven plugin](https://docs.spring.io/
 ```shell
 mvn spring-boot:run
 ```
+
+### Profiles
+Available profiles are dev (Development) and prod (Production). Profiles can be activated from `application.properties` file or from command line
+```shell
+--spring.profiles.active=prod
+```
+
+- `application-dev.properties` is using an in memory database for testing purpose.
+- `application-prod.properties` all production parameters.
 
 ## Deploying the application with Docker
 
